@@ -1,4 +1,5 @@
 import React from 'react'
+import ListCurrentlyReading from './ListCurrentlyReading'
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
 
@@ -45,7 +46,8 @@ class BooksApp extends React.Component {
             <div className="list-books-content">
               <div>
                 <div className="bookshelf">
-                  <h2 className="bookshelf-title">Currently Reading</h2>
+                  <ListCurrentlyReading />
+
                   <div className="bookshelf-books">
                     <ol className="books-grid">
                       <li>
