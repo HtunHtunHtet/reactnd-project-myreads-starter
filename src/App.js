@@ -1,24 +1,27 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import ListCurrentlyReading from './ListCurrentlyReading'
-import ListWantToRead from './ListWantToRead'
-import ListRead from './ListRead'
+import * as BookAPI from './BooksAPI'
+import BooksList from './BooksList'
 
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
 
 class BooksApp extends React.Component {
   state = {
-    /**
-     * TODO: Instead of using this state variable to keep track of which page
-     * we're on, use the URL in the browser's address bar. This will ensure that
-     * users can use the browser's back and forward buttons to navigate between
-     * pages, as well as provide a good URL they can bookmark and share.
-     */
-    showSearchPage: false
+    book: []
+  }
+
+  //Load All Books
+  componentDidMount(){
+    BookAPI.getAll().then((book)=>{
+      this.setState({book})
+    })
   }
 
   render() {
+    console.log(this.state)
+    const {book} = this.state
+
     return (
       <div className="app">
         {this.state.showSearchPage ? (
@@ -49,9 +52,7 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
               <div>
-                <ListCurrentlyReading />
-                <ListWantToRead />
-                <ListRead />
+                <BooksList/>
               </div>
             </div>
             <div className="open-search">
