@@ -19,8 +19,9 @@ class BooksApp extends React.Component {
   }
 
   render() {
-    console.log(this.state)
-    const {book} = this.state
+
+    //get books from api
+    const {books} = this.state
 
     return (
       <div className="app">
@@ -52,7 +53,7 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
               <div>
-                <BooksList/>
+                <BooksList books={books}/>
               </div>
             </div>
             <div className="open-search">
