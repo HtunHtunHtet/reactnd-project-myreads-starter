@@ -6,7 +6,7 @@ import noCover from './icons/no-cover-image.png'
 class Book extends Component{
 
     static propTypes = {
-        book: PropTypes.array.isRequired,
+        book: PropTypes.object.isRequired,
         books: PropTypes.array.isRequired,
         changeShelf : PropTypes.func.isRequired
     }
