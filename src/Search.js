@@ -59,7 +59,14 @@ class Search extends Component {
                             </ol>
                         </div>
                     )}
-
+                    { searchErr && (
+                        <div>
+                            <div className=''>
+                                <h3>0 books found. try again</h3>
+                            </div>
+                        </div>
+                    )
+                    }
 
 
                 </div>
