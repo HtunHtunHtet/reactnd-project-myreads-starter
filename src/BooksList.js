@@ -2,23 +2,23 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import BookShelf from './BookShelf'
 
-class BooksList extends React.Component {
+class BooksList extends Component {
     static propTypes = {
-        books: PropTypes.array.isRequired
+        books: PropTypes.array.isRequired,
+        changeShelf : PropTypes.func.isRequired
     }
 
     state =  {shelfChange : false}
 
-    render(){
-        const {books} = this.props;
-        const shelfTypes = [
-                                { type: 'currentlyReading', title: 'Currently Reading' },
-                                { type: 'wantToRead',  title: 'Want to Read' },
-                                { type: 'read', title: 'Read'}
-                             ]
-        return(
+    render() {
+        const { books, changeShelf } = this.props
+        const shelfTypes = [{ type: 'currentlyReading', title: 'Currently Reading' },
+            { type: 'wantToRead',  title: 'Want to Read' },
+            { type: 'read', title: 'Read'}]
+
+        return (
             <div className="list-books-content">
-                {shTypes.map((shelf, index) =>  {
+                {shelfTypes.map((shelf, index) =>  {
                     const shelfBooks = books.filter( book => book.shelf === shelf.type)
                     return  (
                         <div className="bookshelf" key={index}>
@@ -26,6 +26,7 @@ class BooksList extends React.Component {
                             <div className="bookshelf-books">
                                 <BookShelf
                                     books={ shelfBooks }
+                                    changeShelf={ changeShelf }
                                 />
                             </div>
                         </div> )
