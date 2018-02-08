@@ -16,7 +16,7 @@ class Book extends Component{
         const coverImg = book.imageLinks && book.imageLinks.thumbnail ? book.imageLinks.thumbnail : noCover
         const title = book.title ? book.title : "No title available"
 
-        console.log (coverImg);
+        // console.log (coverImg);
 
         return(
             <li>
