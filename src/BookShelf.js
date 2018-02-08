@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Book from './Book'
 
 class BookShelf extends Component {
-    static proptypes= {
+    static propTypes= {
         books : PropTypes.array.isRequired,
         changeShelf:PropTypes.func.isRequired
     }
