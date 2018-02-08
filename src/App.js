@@ -1,9 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import * as BookAPI from './BooksAPI'
 import BooksList from './BooksList'
-
-// import * as BooksAPI from './BooksAPI'
 import './App.css'
 
 class BooksApp extends React.Component {
@@ -18,6 +17,22 @@ class BooksApp extends React.Component {
     })
   }
 
+  //change shelf state
+  changeShelf = (newBook , newShelf) =>{
+    BookAPI.update(newBook,newShelf).then(response=>{
+
+      //update shelf
+        newBook.shelf = newShelf
+
+      let updatedBooks = this.state.books.filter(book => book.id !== newBook.id)
+
+      //add book
+      updatedBooks.push (newBook);
+      this.setState({ books: updatedBooks})
+
+    })
+  }
+
   render() {
 
     //get books from api
@@ -25,9 +40,17 @@ class BooksApp extends React.Component {
 
     return (
       <div className="app">
-          <BooksList
-              books={ books }
-          />
+          <Route exact path="/" render ={() =>(
+              <div className="list-books">
+                <div className="list-books-title">
+                    <h1> My Reads </h1>
+                </div>
+                  <BooksList
+                      books={ books }
+                      changeShelf={ this.changeShelf }
+                  />
+              </div>
+          )} />
       </div>
     )
   }
