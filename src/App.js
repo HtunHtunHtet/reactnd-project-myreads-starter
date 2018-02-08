@@ -22,7 +22,7 @@ class BooksApp extends React.Component {
     BookAPI.update(newBook,newShelf).then(response=>{
 
       //update shelf
-        newBook.shelf = newShelf
+      newBook.shelf = newShelf
 
       let updatedBooks = this.state.books.filter(book => book.id !== newBook.id)
 

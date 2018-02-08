@@ -22,15 +22,14 @@ class Book extends Component{
                     <div className="book-top">
                         <div
                             className="book-cover"
-                            style={{backgroundImage: `url(${coverImg})`}}>
+                            style={{ backgroundImage: `url(${coverImg})`}}>
                         </div>
                         <ShelfChanger
-                            book    = { book }
-                            books   = { books }
-                            changeShelf = { changeShelf }
+                            book={ book }
+                            books={ books }
+                            changeShelf={changeShelf }
                         />
                     </div>
-
                     <div className="book-title">{ title }</div>
                     { /* Check for authors and render each on separate line if exist*/
                         book.authors && book.authors.map((author, index) => (
