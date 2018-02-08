@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import * as BookAPI from './BooksAPI'
 import BooksList from './BooksList'
+import Search from './Search'
 import './App.css'
 
 class BooksApp extends React.Component {
@@ -39,10 +40,19 @@ class BooksApp extends React.Component {
     const {books} = this.state
 
      //console check for books
-    console.log ({books});
+    // console.log ({books});
 
     return (
       <div className="app">
+          <Route
+              path="/search"
+              render ={() => (
+                  <Search
+                    books ={books}
+                    changeShelf = {this.changeShelf}
+                  />
+              )}
+          />
           <Route exact  path="/" render={() => (
               <div className="list-books">
                   <div className="list-books-title">

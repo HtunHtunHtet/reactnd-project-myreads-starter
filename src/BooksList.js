@@ -11,10 +11,13 @@ class BooksList extends Component {
     state =  {shelfChange : false}
 
     render() {
+        console.log (this.props);
         const { books, changeShelf } = this.props
-        const shelfTypes = [{ type: 'currentlyReading', title: 'Currently Reading' },
-            { type: 'wantToRead',  title: 'Want to Read' },
-            { type: 'read', title: 'Read'}]
+        const shelfTypes = [
+                                {type: 'currentlyReading', title: 'Currently Reading' },
+                                { type: 'wantToRead',  title: 'Want to Read' },
+                                { type: 'read', title: 'Read'}
+                            ]
 
         return (
             <div className="list-books-content">
