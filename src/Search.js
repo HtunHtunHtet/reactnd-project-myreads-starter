@@ -32,7 +32,6 @@ class Search extends Component {
         const { query, newBooks, searchErr} = this.state
         const { books, changeShelf } = this.props
 
-        console.log(this.state);
         return(
             <div className="search-books">
                 <div className="search-books-bar">
