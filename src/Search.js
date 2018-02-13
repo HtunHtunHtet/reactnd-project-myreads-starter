@@ -17,7 +17,7 @@ class Search extends Component {
     }
 
     getBooks = (event) =>{
-        const query = event.target.value.trim()
+        const query = event.target.value
         this.setState ({query: query})
 
         //find book base on user import
