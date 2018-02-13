@@ -13,7 +13,7 @@ Once Node is installed, navigate to the directory where you want to store the ap
 git clone https://github.com/HtunHtunHtet/reactnd-project-myreads-starter.git
 npm install
 npm install --save react react-debounce-input
-$ npm install --save react-router-dom
+npm install --save react-router-dom
 npm start
 ```
 
