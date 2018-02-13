@@ -19,7 +19,10 @@ class Search extends Component {
 
     getBooks = (event) =>{
         const query = event.target.value
-        console.log (query);
+
+        //checking whether react-debounce-input is working or not
+        // console.log (query);
+
         this.setState ({query: query})
 
         //find book base on user import
